@@ -22,6 +22,11 @@ var StopWatch = React.createClass({
     return <View style={styles.container}>
       <View style={styles.header}>
         <View style={styles.timerWrapper}>
+          <View style={{backgroundColor: 'black'}}>
+            <Text style={styles.title}>
+              Jerry's (Not So) Fancy StopWatch
+            </Text>
+          </View>
           <Text style={styles.timer}>
             {formatTime(this.state.timeElapsed)}
           </Text>
@@ -76,7 +81,7 @@ var StopWatch = React.createClass({
       clearInterval(this.interval);
       this.setState({running:false});      return
     } else {
-      this.setState({laps:[]}); 
+      this.setState({laps:[]});
     }
 
     this.setState({startTime: new Date()})
@@ -142,6 +147,13 @@ var styles= StyleSheet.create({
   },
   lapText: {
     fontSize: 30
+  },
+  title: {
+    fontSize: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 1,
+    color:'white'
   }
 });
 
